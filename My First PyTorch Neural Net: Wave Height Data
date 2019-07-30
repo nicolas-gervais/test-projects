@@ -1,0 +1,146 @@
+# ----- libraries
+import torch
+import torch.nn.functional as F
+import torch.nn as nn
+from torch.autograd import Variable
+from torch import optim
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error
+import os 
+os.chdir('C:/Users/Nicolas/Documents/Scraping/waves-coastal-data')
+
+# ----- getting the data
+df = pd.read_csv('waves-data.csv', na_values=-99.9, index_col=0)
+
+# ----- inspecting the data
+df.head()
+
+# =============================================================================
+#                      Hs  Hmax     Tz     Tp  Peak Direction    SST
+# Date/Time                                                         
+# 01/01/2017 00:00    NaN   NaN    NaN    NaN             NaN    NaN
+# 01/01/2017 00:30  0.875  1.39  4.421  4.506             NaN    NaN
+# 01/01/2017 01:00  0.763  1.15  4.520  5.513            49.0  25.65
+# 01/01/2017 01:30  0.770  1.41  4.582  5.647            75.0  25.50
+# 01/01/2017 02:00  0.747  1.16  4.515  5.083            91.0  25.45
+# =============================================================================
+
+print(f'The dataframe has {df.shape[0]:,} rows and {df.shape[1]} columns.')
+
+#The dataframe has 43,728 rows and 6 columns.
+
+print(f'Overall, {df.isnull().sum().sum()} values are missing.')
+
+#Overall, 873 values are missing.
+
+# ----- imputing missing values
+df = df.fillna(method='bfill', axis=0)
+
+# ----- correlation matrix
+df.corr()['Hmax']
+
+# =============================================================================
+# Hs                0.972922
+# Hmax              1.000000
+# Tz                0.372475
+# Tp                0.003571
+# Peak Direction   -0.017469
+# SST               0.248866
+# Name: Hmax, dtype: float64
+# =============================================================================
+
+# We will predict `Hmax`, the maximum height of the wave.
+
+# ----- separating the X and y
+
+X = df.drop('Hmax', axis=1).values.astype(np.float32)
+
+X[:5]
+
+# =============================================================================
+# array([[ 0.875,  4.421,  4.506, 49.   , 25.65 ],
+#        [ 0.875,  4.421,  4.506, 49.   , 25.65 ],
+#        [ 0.763,  4.52 ,  5.513, 49.   , 25.65 ],
+#        [ 0.77 ,  4.582,  5.647, 75.   , 25.5  ],
+#        [ 0.747,  4.515,  5.083, 91.   , 25.45 ]], dtype=float32)
+# =============================================================================
+
+y = df.loc[:, 'Hmax'].values.astype(np.float32)
+
+y[:5]
+
+# array([1.39, 1.39, 1.15, 1.41, 1.16], dtype=float32)
+
+# ----- train test split
+
+trainX, testX, trainY, testY = train_test_split(X, y, test_size=2e-1)
+
+trainX.shape, testX.shape
+
+#((34982, 5), (8746, 5))
+
+# is the gpu available? 
+
+torch.cuda.is_available()
+
+#True
+
+# ----- setting up the gpu
+device = torch.device('cuda')
+
+# ----- assigning model shapes
+N, nodes_in, H, nodes_out = 64, trainX.shape[1], 100, 1
+
+# ----- sending the data to the gpu
+x = torch.tensor(trainX).to(device)
+y = torch.tensor(trainY).view(trainY.shape[0], 1).to(device)
+
+# ----- building the model
+model = torch.nn.Sequential(
+          torch.nn.Linear(nodes_in, H),
+          torch.nn.ReLU(),
+          torch.nn.Linear(H, 200),
+          torch.nn.ReLU(),
+          torch.nn.Linear(200, nodes_out),
+        ).to(device)
+loss_fn = torch.nn.L1Loss()
+
+# ----- training the model
+learning_rate = .0001
+for t in range(1, 5_000+1):
+    y_pred = model(x)
+    loss = loss_fn(y_pred, y)
+    if t % 4_00 == 0:
+        print(f'Epoch: {t:,} — Loss: {loss.item()}')
+    model.zero_grad()
+    loss.backward()
+    with torch.no_grad():
+        for param in model.parameters():
+            param.data -= learning_rate * param.grad
+print('Done.')
+
+# =============================================================================
+# Epoch: 400 — Loss: 0.6254167556762695
+# Epoch: 800 — Loss: 0.6094493865966797
+# Epoch: 1,200 — Loss: 0.5964435935020447
+# Epoch: 1,600 — Loss: 0.5850871801376343
+# Epoch: 2,000 — Loss: 0.5746961832046509
+# Epoch: 2,400 — Loss: 0.6120541095733643
+# Epoch: 2,800 — Loss: 0.6367702484130859
+# Epoch: 3,200 — Loss: 0.6326507329940796
+# Epoch: 3,600 — Loss: 0.6219278573989868
+# Epoch: 4,000 — Loss: 0.6226282119750977
+# Epoch: 4,400 — Loss: 0.617455005645752
+# Epoch: 4,800 — Loss: 0.6137246489524841
+# Done.
+# =============================================================================
+
+# ----- making predictions on the test set
+y_pred = model(torch.from_numpy(testX).to(device))
+
+# ----- final score
+mean_absolute_error(testY, y_pred.cpu().detach().numpy())
+
+#0.5852968
