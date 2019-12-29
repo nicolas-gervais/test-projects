@@ -26,7 +26,7 @@ Those are my projects that are completed within a single IPython notebook, and d
 
 - [Store Item Demand - Time Series Analysis w/ Deep Learning](https://github.com/nicolas-gervais/test-projects/blob/master/Time%20Series%20Deep%20Learning%20(RNN%2C%20LSTM%2C%20CNN).ipynb)
 
-<img src=https://user-images.githubusercontent.com/46652050/71558019-81010500-2a1c-11ea-8287-530c127a5022.png wodth=400 img>
+<img src=https://user-images.githubusercontent.com/46652050/71558019-81010500-2a1c-11ea-8287-530c127a5022.png width=400 img>
 
 [ConvNet For Natural Scenes Pictures](https://github.com/nicolas-gervais/test-projects/blob/master/ConvNet%20For%20Natural%20Scenes%20Pictures.ipynb)
 <img src=https://user-images.githubusercontent.com/46652050/71558063-fa005c80-2a1c-11ea-8fef-ce92489e1195.png width=400 img>
