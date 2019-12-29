@@ -3,11 +3,14 @@
 Those are my projects that are completed within a single IPython notebook, and don't warrant an entire repository.
 ## Highlights
 - My very first project: [Risk Dice Simulator](https://github.com/nicolas-gervais/test-projects/blob/master/riskdicesimulator.py)
+
+<img src=https://www.gamesoftradition.com/wp-content/uploads/2017/06/board-games-like-risk.jpg width=400 img>
+
 - [Machine Learning Algorithms Crash Course](https://github.com/nicolas-gervais/test-projects/blob/master/Machine%20Learning%20Algorithms%20Crash%20Course.ipynb)
 
 <img src=https://user-images.githubusercontent.com/46652050/71557925-45197000-2a1b-11ea-8a5d-43bb515fb79c.png width=400 img>
 
-- [Predicting Electric Vehicle Rotor Temperature](https://github.com/nicolas-gervais/test-projects/blob/master/Predicting%20Electric%20Vehicle%20Rotor%20Temperature.ipynb)
+- [People Analytics - Predicting Turnover](https://github.com/nicolas-gervais/test-projects/blob/master/People%20Analytics%20-%20Predicting%20Turnover.ipynb)
 
 <img src=https://user-images.githubusercontent.com/46652050/71557825-93c60a80-2a19-11ea-8117-5c14aa45483a.png width=400 img>
 
@@ -24,3 +27,6 @@ Those are my projects that are completed within a single IPython notebook, and d
 - [Store Item Demand - Time Series Analysis w/ Deep Learning](https://github.com/nicolas-gervais/test-projects/blob/master/Time%20Series%20Deep%20Learning%20(RNN%2C%20LSTM%2C%20CNN).ipynb)
 
 <img src=https://user-images.githubusercontent.com/46652050/71558019-81010500-2a1c-11ea-8287-530c127a5022.png wodth=400 img>
+
+[ConvNet For Natural Scenes Pictures](https://github.com/nicolas-gervais/test-projects/blob/master/ConvNet%20For%20Natural%20Scenes%20Pictures.ipynb)
+<img src=https://user-images.githubusercontent.com/46652050/71558063-fa005c80-2a1c-11ea-8fef-ce92489e1195.png width=400 img>
