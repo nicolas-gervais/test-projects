@@ -48,3 +48,50 @@ plt.show()
 
 ## ELU
 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{ELU}(x)&space;=&space;\max(0,x)&space;&plus;&space;\min(0,&space;\alpha&space;*&space;(\exp(x)&space;-&space;1))$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{ELU}(x)&space;=&space;\max(0,x)&space;&plus;&space;\min(0,&space;\alpha&space;*&space;(\exp(x)&space;-&space;1))$$" title="\large $$\text{ELU}(x) = \max(0,x) + \min(0, \alpha * (\exp(x) - 1))$$" height=25/></a>
+
+<img src=https://media.discordapp.net/attachments/661234508078776333/661964814767095827/movie.gif img>
+
+## GLU
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$${GLU}(a,&space;b)=&space;a&space;\otimes&space;\sigma(b)$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$${GLU}(a,&space;b)=&space;a&space;\otimes&space;\sigma(b)$$" title="\large $${GLU}(a, b)= a \otimes \sigma(b)$$" height=25/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643488-6337d800-2c88-11ea-8868-fb2e3180b174.png img>
+
+## Sigmoid
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{Sigmoid}(x)&space;=&space;\frac{1}{1&space;&plus;&space;\exp(-x)}$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{Sigmoid}(x)&space;=&space;\frac{1}{1&space;&plus;&space;\exp(-x)}$$" title="\large $$\text{Sigmoid}(x) = \frac{1}{1 + \exp(-x)}$$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643495-8b273b80-2c88-11ea-8683-50dd2cc9a3b8.png img>
+
+## Softmax
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{Softmax}(x_{i})&space;=&space;\frac{\exp(x_i)}{\sum_j&space;\exp(x_j)}$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{Softmax}(x_{i})&space;=&space;\frac{\exp(x_i)}{\sum_j&space;\exp(x_j)}$$" title="\large $$\text{Softmax}(x_{i}) = \frac{\exp(x_i)}{\sum_j \exp(x_j)}$$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643530-f83ad100-2c88-11ea-96cc-22683b70452c.png img>
+
+## Softsign
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$&space;\text{SoftSign}(x)&space;=&space;\frac{x}{&space;1&space;&plus;&space;|x|}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$&space;\text{SoftSign}(x)&space;=&space;\frac{x}{&space;1&space;&plus;&space;|x|}&space;$$" title="\large $$ \text{SoftSign}(x) = \frac{x}{ 1 + |x|} $$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643550-2b7d6000-2c89-11ea-9d84-123c0886dc84.png img>
+
+## Softplus
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$&space;\text{Softplus}(x)&space;=&space;\frac{1}{\beta}&space;*&space;\log(1&space;&plus;&space;\exp(\beta&space;*&space;x))&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$&space;\text{Softplus}(x)&space;=&space;\frac{1}{\beta}&space;*&space;\log(1&space;&plus;&space;\exp(\beta&space;*&space;x))&space;$$" title="\large $$ \text{Softplus}(x) = \frac{1}{\beta} * \log(1 + \exp(\beta * x)) $$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643567-5b2c6800-2c89-11ea-8390-6ed0c5d9a061.png img>
+
+## Softshrink
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$&space;\text{SoftShrinkage}(x)&space;=&space;\begin{cases}&space;x&space;-&space;\lambda,&space;&&space;\text{&space;if&space;}&space;x&space;>&space;\lambda&space;\\&space;x&space;&plus;&space;\lambda,&space;&&space;\text{&space;if&space;}&space;x&space;<&space;-\lambda&space;\\&space;0,&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$&space;\text{SoftShrinkage}(x)&space;=&space;\begin{cases}&space;x&space;-&space;\lambda,&space;&&space;\text{&space;if&space;}&space;x&space;>&space;\lambda&space;\\&space;x&space;&plus;&space;\lambda,&space;&&space;\text{&space;if&space;}&space;x&space;<&space;-\lambda&space;\\&space;0,&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}&space;$$" title="\large $$ \text{SoftShrinkage}(x) = \begin{cases} x - \lambda, & \text{ if } x > \lambda \\ x + \lambda, & \text{ if } x < -\lambda \\ 0, & \text{ otherwise } \end{cases} $$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643577-77300980-2c89-11ea-8ff8-b2d8efed1415.png img>
+
+## Hardshrink
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$&space;\text{HardShrink}(x)&space;=&space;\begin{cases}&space;x,&space;&&space;\text{&space;if&space;}&space;x&space;>&space;\lambda&space;\\&space;x,&space;&&space;\text{&space;if&space;}&space;x&space;<&space;-\lambda&space;\\&space;0,&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$&space;\text{HardShrink}(x)&space;=&space;\begin{cases}&space;x,&space;&&space;\text{&space;if&space;}&space;x&space;>&space;\lambda&space;\\&space;x,&space;&&space;\text{&space;if&space;}&space;x&space;<&space;-\lambda&space;\\&space;0,&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}&space;$$" title="\large $$ \text{HardShrink}(x) = \begin{cases} x, & \text{ if } x > \lambda \\ x, & \text{ if } x < -\lambda \\ 0, & \text{ otherwise } \end{cases} $$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643596-9fb80380-2c89-11ea-959d-641a88f38282.png img>
+
+# TANH
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{Tanh}(x)&space;=&space;\frac{e^x&space;-&space;e^{-x}}&space;{e^x&space;&plus;&space;e^{-x}}$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{Tanh}(x)&space;=&space;\frac{e^x&space;-&space;e^{-x}}&space;{e^x&space;&plus;&space;e^{-x}}$$" title="\large $$\text{Tanh}(x) = \frac{e^x - e^{-x}} {e^x + e^{-x}}$$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71643678-5d42f680-2c8a-11ea-9082-97c6eff831f4.png img>
