@@ -31,7 +31,7 @@ ax.scatter(x, y)
 plt.show()
 ```
 
-<img src=https://media.discordapp.net/attachments/661234508078776333/661620841628565504/movie.gif img>
+<img src=https://media.discordapp.net/attachments/661234508078776333/662328213372141568/movie.gif img>
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$&space;RReLU(x)&space;=&space;\begin{cases}&space;x&space;&&space;\text{if&space;}&space;x&space;\geq&space;0&space;\\&space;0.1&space;αx&space;&&space;\text{otherwise},\&space;α&space;=&space;random(0.125,&space;0.333)&space;\end{cases}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$&space;RReLU(x)&space;=&space;\begin{cases}&space;x&space;&&space;\text{if&space;}&space;x&space;\geq&space;0&space;\\&space;0.1&space;αx&space;&&space;\text{otherwise},\&space;α&space;=&space;random(0.125,&space;0.333)&space;\end{cases}&space;$$" title="\large $$ RReLU(x) = \begin{cases} x & \text{if } x \geq 0 \\ 0.1 αx & \text{otherwise},\ α = random(0.125, 0.333) \end{cases} $$" height=75/></a>
 
@@ -91,7 +91,33 @@ plt.show()
 
 <img src=https://user-images.githubusercontent.com/46652050/71643596-9fb80380-2c89-11ea-959d-641a88f38282.png img>
 
-# TANH
+## TANH
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{Tanh}(x)&space;=&space;\frac{e^x&space;-&space;e^{-x}}&space;{e^x&space;&plus;&space;e^{-x}}$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{Tanh}(x)&space;=&space;\frac{e^x&space;-&space;e^{-x}}&space;{e^x&space;&plus;&space;e^{-x}}$$" title="\large $$\text{Tanh}(x) = \frac{e^x - e^{-x}} {e^x + e^{-x}}$$" height=75/></a>
 
 <img src=https://user-images.githubusercontent.com/46652050/71643678-5d42f680-2c8a-11ea-9082-97c6eff831f4.png img>
+
+## Tanhshrink
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{Tanhshrink}(x)&space;=&space;x&space;-&space;\text{Tanh}(x)$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{Tanhshrink}(x)&space;=&space;x&space;-&space;\text{Tanh}(x)$$" title="\large $$\text{Tanhshrink}(x) = x - \text{Tanh}(x)$$" height=25/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71677740-95f9d300-2d51-11ea-881f-1280b642e3da.png img>
+
+## Hardtanh
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{HardTanh}(x)&space;=&space;\begin{cases}&space;1&space;&&space;\text{&space;if&space;}&space;x&space;>&space;1&space;\\&space;-1&space;&&space;\text{&space;if&space;}&space;x&space;<&space;-1&space;\\&space;x&space;&&space;\text{&space;otherwise&space;}&space;\\&space;\end{cases}$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{HardTanh}(x)&space;=&space;\begin{cases}&space;1&space;&&space;\text{&space;if&space;}&space;x&space;>&space;1&space;\\&space;-1&space;&&space;\text{&space;if&space;}&space;x&space;<&space;-1&space;\\&space;x&space;&&space;\text{&space;otherwise&space;}&space;\\&space;\end{cases}$$" title="\large $$\text{HardTanh}(x) = \begin{cases} 1 & \text{ if } x > 1 \\ -1 & \text{ if } x < -1 \\ x & \text{ otherwise } \\ \end{cases}$$" height=100/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71677868-d3f6f700-2d51-11ea-86a1-9717877cfeae.png img>
+
+## CELU ehight 12
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$\text{CELU}(x)&space;=&space;\max(0,x)&space;&plus;&space;\min(0,&space;\alpha&space;*&space;(\exp(x/\alpha)&space;-&space;1))$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$\text{CELU}(x)&space;=&space;\max(0,x)&space;&plus;&space;\min(0,&space;\alpha&space;*&space;(\exp(x/\alpha)&space;-&space;1))$$" title="\large $$\text{CELU}(x) = \max(0,x) + \min(0, \alpha * (\exp(x/\alpha) - 1))$$" height=12/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71677956-fbe65a80-2d51-11ea-9266-1ab125d3a745.png img>
+
+## Log Sigmoid
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$&space;\text{LogSigmoid}(x)&space;=&space;\log\left(\frac{&space;1&space;}{&space;1&space;&plus;&space;\exp(-x)}\right)&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$&space;\text{LogSigmoid}(x)&space;=&space;\log\left(\frac{&space;1&space;}{&space;1&space;&plus;&space;\exp(-x)}\right)&space;$$" title="\large $$ \text{LogSigmoid}(x) = \log\left(\frac{ 1 }{ 1 + \exp(-x)}\right) $$" height=25/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71678033-233d2780-2d52-11ea-908c-6c110ca11c4e.png img>
+
+## Threshold
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\large&space;$$&space;y&space;=&space;\begin{cases}&space;x,&space;&\text{&space;if&space;}&space;x&space;>&space;\text{threshold}&space;\\&space;\text{value},&space;&\text{&space;otherwise&space;}&space;\end{cases}&space;$$" target="_blank"><img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\large&space;$$&space;y&space;=&space;\begin{cases}&space;x,&space;&\text{&space;if&space;}&space;x&space;>&space;\text{threshold}&space;\\&space;\text{value},&space;&\text{&space;otherwise&space;}&space;\end{cases}&space;$$" title="\large $$ y = \begin{cases} x, &\text{ if } x > \text{threshold} \\ \text{value}, &\text{ otherwise } \end{cases} $$" height=75/></a>
+
+<img src=https://user-images.githubusercontent.com/46652050/71678087-4a93f480-2d52-11ea-89c7-b1bad6f63cdd.png img>
